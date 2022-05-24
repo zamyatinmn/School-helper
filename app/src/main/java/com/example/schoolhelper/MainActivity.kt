@@ -3,10 +3,10 @@ package com.example.schoolhelper
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Surface
-import androidx.compose.ui.Modifier
-import com.example.schoolhelper.ui.FirstScreen
+import androidx.compose.material.Scaffold
+import androidx.navigation.compose.rememberNavController
+import com.example.schoolhelper.ui.BottomBar
+import com.example.schoolhelper.ui.NavigationGraph
 import com.example.schoolhelper.ui.theme.SchoolHelperTheme
 
 class MainActivity : ComponentActivity() {
@@ -14,9 +14,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             SchoolHelperTheme {
-                // A surface container using the 'background' color from the theme
-                Surface {
-                    FirstScreen(Modifier.fillMaxSize())
+                val navController = rememberNavController()
+                Scaffold(bottomBar = { BottomBar(navController = navController) }) {
+                    NavigationGraph(navController = navController)
                 }
             }
         }

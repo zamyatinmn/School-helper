@@ -17,7 +17,7 @@ import com.example.schoolhelper.ui.theme.SchoolHelperTheme
 import com.example.schoolhelper.ui.theme.SpringGreen
 
 @Composable
-fun FirstScreen(modifier: Modifier = Modifier) {
+fun HomeScreen(modifier: Modifier = Modifier) {
     Column(modifier = modifier.padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         TimerView(Modifier.fillMaxWidth())
     }
