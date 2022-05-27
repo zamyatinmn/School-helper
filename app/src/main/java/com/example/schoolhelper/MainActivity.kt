@@ -7,6 +7,7 @@ import androidx.compose.material.Scaffold
 import androidx.navigation.compose.rememberNavController
 import com.example.schoolhelper.ui.BottomBar
 import com.example.schoolhelper.ui.NavigationGraph
+import com.example.schoolhelper.ui.TopBar
 import com.example.schoolhelper.ui.theme.SchoolHelperTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +16,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             SchoolHelperTheme {
                 val navController = rememberNavController()
-                Scaffold(bottomBar = { BottomBar(navController = navController) }) {
+                Scaffold(
+                    topBar = { TopBar() },
+                    bottomBar = { BottomBar(navController = navController) }) {
                     NavigationGraph(navController = navController)
                 }
             }
